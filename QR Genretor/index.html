@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Gentetor </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+     <P>enter Your text or URl</P>
+     <input type="text" name="input" id="input">
+     <div id="QR">
+        <img src="" id="imgTag">
+     </div>
+     <button>Genrate QR code</button>
+    </div>
+    <script>
+    const QR=document.querySelector("img")
+    const input = document.querySelector("input")
+       
+   function Qrgenretor(value){
+        if(value===""){
+            input.classList.add("error")
+            setTimeout(()=> {input.classList.remove("error")},1000)
+        }else{
+         QR.src=` https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${value}`
+        }
+    }
+        document.querySelector("button").addEventListener("click", () => {
+            
+            Qrgenretor(input.value)
+        })
+    </script>
+</body>
+</html>
