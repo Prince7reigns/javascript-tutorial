@@ -1,0 +1,111 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+background: #f73fdf;
+}
+
+.container{
+    margin: 50px;
+}
+
+.container button{
+    background: #4367f6;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    margin: 10px;
+    cursor: pointer;
+    font-size: large;
+    font-weight: bold;
+}
+
+.notification{
+    position: absolute;
+    display: flex;
+    align-items: flex-end;
+    bottom: 30px;
+    right: 30px;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 20px;
+    
+}
+
+
+
+.notificationStyle{
+    position: relative;
+    width: 300px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 0px rgba(0,0,0,0.3);
+    padding: 15px 15px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    transform: translateX(100%);
+    animation: moveleft 0.5s linear forwards;
+}
+@keyframes moveleft {
+    100% {
+        transform: translateX(0%);
+    }
+    
+}
+
+.notificationStyle::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    animation: anim 5s linear forwards;
+}
+
+@keyframes anim {
+    100%{
+        width: 0;
+    }
+    
+}
+
+
+
+.notificationStyle i{
+    font-size: 40px;
+    margin-right: 10px;
+}
+
+.error i{
+    color: orange;
+}
+
+.Invailid i{
+    color: red;
+}
+
+.Succes i{
+   color: green;
+}
+
+.error::before{
+    background: orange;
+}
+
+.Invailid::before{
+    background: red;
+}
+
+.Succes::before{
+    background: green;
+ }
+
+
+
+

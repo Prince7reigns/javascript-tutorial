@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notification</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/39250db19b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <button onclick="messagePop(Succes)">Succes</button>
+        <button onclick="messagePop(Error)">Error</button>
+        <button onclick="messagePop(Invailid)">Invailid</button>
+    </div>
+
+    <div class="notification">
+
+    </div>
+
+    <script>
+        const Succes =`<i class="fa-solid fa-circle-check"></i>   Success fully Submitted`
+        const Error=`<i class="fa-solid fa-circle-exclamation"></i> Please fix the error`
+        const Invailid=`<i class="fa-solid fa-circle-xmark"></i> Invailid input, check again`
+        const notification = document.querySelector(".notification")
+        function messagePop(mes) {
+            const pop=document.createElement("div")
+            pop.innerHTML=mes
+            pop.classList.add("notificationStyle")
+            if(mes.length===66) {pop.classList.add("Succes");}
+            if(mes.length===67) {pop.classList.add("error");}
+            if(mes.length===68) {pop.classList.add("Invailid");}
+            notification.appendChild(pop)
+
+            setTimeout(() => {
+                pop.remove();
+            } ,5000)
+
+        }
+
+    </script>
+</body>
+</html>
